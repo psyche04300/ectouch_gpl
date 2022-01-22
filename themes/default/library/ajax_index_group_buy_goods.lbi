@@ -1,0 +1,27 @@
+
+<h3>{$cat.cat_name}</h3>
+
+        <!--{if $goods}-->
+<ul id="J_ItemList">
+<!-- {foreach from=$goods item=groupbuy} -->
+<li class="product_item">
+    <a href="{$groupbuy.url}" title="{$goods.name}"><img src="{$groupbuy.goods_thumb}" alt="{$groupbuy.goods_name}" /></a>
+    <dl>
+        <dt>
+        <h4 class="title"><a href="{$groupbuy.url}" title="{$groupbuy.goods_name}">{$groupbuy.goods_name}</a></h4>
+        <dt>
+        <dd>
+            <span class="pull-left">{$lang.price}：<b>{$groupbuy.cur_price}</b></span>
+            <i id="index_gwc"></i>
+        </dd>
+    </dl>
+</li>
+<!--{/foreach}-->
+</ul>
+        <!-- {/if}-->
+<script type="text/javascript">
+    var index_gwc = document.getElementById('index_gwc');
+    index_gwc.onclick = function () {
+        addToCart_quick(37);
+    }
+</script>

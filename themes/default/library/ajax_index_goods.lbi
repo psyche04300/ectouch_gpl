@@ -1,0 +1,21 @@
+
+<h3>{$cat.cat_name}</h3>
+
+        <!--{if $goods}-->
+<ul id="J_ItemList">
+<!-- {foreach from=$goods item=goods} -->
+<li class="product_item">
+    <a href="{$goods.url}" title="{$goods.name}"><img src="{$goods.thumb}" title="{$goods.name}" alt="{$goods.name}"/></a>
+    <dl>
+        <dt>
+        <h4 class="title"><a href="{$goods.url}" title="{$goods.name}">{$goods.name}</a></h4>
+        <dt>
+        <dd>
+            <span class="pull-left">价格：<b>{if $goods.promote_price}-->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--></b></span>
+            <a href="javascript:void(0)" onclick="addToCart_quick({$goods.id})"><i></i></a>
+        </dd>
+    </dl>
+</li>
+<!--{/foreach}-->
+</ul>
+        <!-- {/if}-->

@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/*新品上市页面*/
+.ect-box-flex{
+    background-color: #ffffff;
+}
+
+.ect-box-flex img{
+    width: 4.0rem;
+    height: 4.0rem;
+}
+
+.ect-box-flex p{
+    font-size: 1.1rem;
+    color: #898989;
+    font-weight: bold;
+}
+
+/*导航*/
+.ect-wrapper {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    max-width: 640px;
+}
+
+.top-height {
+    height: 3.0rem;
+}
+
+.con {
+    /*background-color: red;*/
+}
+
+.ect-pro-list {
+    /*background: #a94a4a;*/
+}
+
+.pager {
+    /*background-color: blue;*/
+    margin: 1rem 0 8rem 0;
+    height: 4rem;
+}
+
+.con footer{
+    position: fixed;
+    bottom: 0;
+    height: 7rem;
+    background: white;
+    width: 100%;
+}
+
+.con footer nav.ect-nav2 {
+    height: 100%;
+    color: #999;
+    background: #fcfcfc;
+    width: 100%;
+    max-width: 640px;
+    border-top: 1px solid #e3e3e3;
+}
+.con footer nav.ect-nav2 a {
+    color: #999;
+}
+.con footer nav.ect-nav2 ul li {
+    padding: 0.8rem 0;
+    width: 20%;
+}
+.con footer nav.ect-nav2 ul li i {
+    display: block;
+    width: 1.9em;
+    height: 1.9em;
+    margin: 0.1em auto;
+}
+
+/* 购物车 */
+.ect-bg {
+    background: #71d78c !important;
+    color: #fff !important;
+    height: auto;
+    overflow: hidden;
+
+    background: -webkit-linear-gradient(left, #71d78c, #52af80);  /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #71d78c, #52af80);       /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #71d78c, #52af80);     /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #71d78c , #52af80);      /* 标准的语法 */
+}

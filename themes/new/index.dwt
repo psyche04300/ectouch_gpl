@@ -1,0 +1,211 @@
+<!-- #BeginLibraryItem "/library/page_header2.lbi" --><!-- #EndLibraryItem -->
+
+
+
+    <div class="index_wrap_body">
+        <div class="index_wrap_banner">
+
+            <!-- 第一个广告位 -->
+            {insert name='ads' id=1 num=1}
+            <!--<img src="__TPL__/images/index/index_banner.png">-->
+
+            <!-- 图片轮播资料参考: http://www.jq22.com/webqd656 -->
+
+        </div>
+
+        <div class="index_body_ads_img_one" style="width: 93%;margin: 0.2rem auto 0 auto;">
+            <!-- 第二个广告位 -->
+            {insert name='ads' id=2 num=1}
+        </div>
+
+
+        <div class="index_body_list">
+
+            <ul class="row ect-row-nav">
+                <!--{foreach from=$categories item=cat name=cate}-->
+                <a href="{$cat.url}">
+
+                    <li class="col-sm-3 col-xs-3"><i>
+
+                        <img src="{$cat.cat_image}">
+                    </i>
+                        <!--{if $smarty.foreach.cate.iteration eq 1}-->
+                        <p class="text-center" style="color:red;font-weight: bold">{$cat.cat_name}</p>
+                        <!--{else}-->
+                        <p class="text-center">{$cat.cat_name}</p>
+                        <!--{/if}-->
+                    </li>
+                </a>
+                <!--{/foreach}-->
+            </ul>
+
+        </div>
+
+        <style>
+            .fui-picturew {
+                height: auto;
+                overflow: hidden;
+                width: 100%;
+                padding: 0 2px;
+                margin-bottom: -1px;
+            }
+            .fui-picturew .item {
+                height: auto;
+                display: block;
+                float: left;
+                margin-bottom: -1px;
+                width: 48.5% !important;
+            }
+            .fui-picturew .item img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                border: 0;
+                padding: 0;
+                outline: none;
+            }
+        </style>
+        <!-- 公告 -->
+        <!--
+        <div class="back_gonggao">
+            <img src="__TPL__/images/index/gg.png" alt=""><span>公告：</span>
+        </div>
+        -->
+        <div class="fui-picturew row-2" style="padding: 0px 2px 0 2px; ">
+
+
+            <div class="item" style="padding: 0px 2px;">
+
+                <a href="http://shop.jigongbao.com/new/app/index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=groups" data-nocache="true"><img src="http://shop.jigongbao.com/new/attachment/images/1/2018/10/Oc62Cz3zFcfRrxJ54zjfVl2JX33Kr4.jpg"></a>
+
+            </div>
+
+
+            <div class="item" style="padding: 0px 2px;">
+
+                <a href="http://shop.jigongbao.com/new/app/index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=bargain" data-nocache="true"><img src="http://shop.jigongbao.com/new/attachment/images/1/2018/10/mPhjMhwTVPTh5x2XTpTXGj41GGT0t1.png"></a>
+
+            </div>
+
+
+        </div>
+        <div class="index_body_img_one">
+            <!-- 第三个广告位 -->
+            {insert name='ads' id=3 num=1}
+            <!--<img src="__TPL__/images/index/index_first_img.png" alt="">-->
+        </div>
+
+        <!--
+        <div class="index_kbbk">口碑爆款</div>
+        -->
+
+
+        <div class="index_body_scroll_img_two">
+
+            <!--{foreach from=$best_goods item=hot}-->
+
+            <div class="index_body_img_two">
+                <div class="index_body_img_two_left">
+                    <img src="{$hot.goods_img}" alt="">
+                </div>
+                <div class="index_body_img_two_right">
+                    <dl>
+                        <dt>
+                            <div class="hot_name">{$hot.name}</div>
+                        </dt>
+                        <dd>
+                            <p><i></i> <span>{$hot.shop_price}</span> <span>/</span> <span>箱</span></p>
+                            <div class="btn"><a href="javascript:addToCart_quick({$hot.id});"><input class="cart" type="button" value="加入购物车"></a></div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+              $(function(){
+                $cart_count=0;
+                $('.cart').shoping({
+                  endElement:"#position_p",
+                  iconCSS:"",
+                  iconImg:"__TPL__/images/index/shopping_card.png",
+                  endFunction:function(element){
+                        // alert("加入购物车成功！");
+                    console.log($cart_count);
+                    return false;
+                  }
+                })
+              });
+            </script>
+
+            <!--{/foreach}-->
+
+        </div>
+
+
+        <div class="index_body_img_one">
+            <!-- 第四个广告位 -->
+            {insert name='ads' id=4 num=1}
+        </div>
+
+        <div class="index_body_scroll_img_two">
+
+            <!--{foreach from=$list01 item=it}-->
+
+            <div class="index_body_img_two">
+                <div class="index_body_img_two_left">
+                    <img src="{$it.goods_img}" alt="">
+                </div>
+                <div class="index_body_img_two_right">
+                    <dl>
+                        <dt>
+                            <div class="hot_name">{$it.name}</div>
+                        </dt>
+                        <dd>
+                            <p><i></i> <span>{$it.shop_price}</span> <span>/</span> <span>箱</span></p>
+                            <div class="btn"><a href="javascript:addToCart_quick({$hot.id});"><input class="cart" type="button" value="加入购物车"></a></div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+              $(function(){
+                $cart_count=0;
+                $('.cart').shoping({
+                  endElement:"#position_p",
+                  iconCSS:"",
+                  iconImg:"__TPL__/images/index/shopping_card.png",
+                  endFunction:function(element){
+                    // alert("加入购物车成功！");
+                    console.log($cart_count);
+                    return false;
+                  }
+                })
+              });
+            </script>
+
+            <!--{/foreach}-->
+
+        </div>
+
+
+    </div>
+
+    <footer>
+
+        <nav class="ect-nav index_wrap_footer">
+            <!-- #BeginLibraryItem "/library/page_menu2.lbi" -->
+            <!-- #EndLibraryItem -->
+        </nav>
+
+    </footer>
+
+    <div style="padding-bottom:4.2em;"></div>
+
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.json.js" ></script>
+<script type="text/javascript" src="__PUBLIC__/js/common.js?333"></script>
+</body></html>

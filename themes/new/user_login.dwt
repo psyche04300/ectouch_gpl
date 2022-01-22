@@ -1,0 +1,100 @@
+<!-- #BeginLibraryItem "/library/user_header2.lbi" --><!-- #EndLibraryItem -->
+
+<!-- Input 输入框 placeholder 字体颜色样式修改 -->
+<style>
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: white;
+        font-size:15px;
+        font-weight: lighter;
+    }
+
+    input:-moz-placeholder, textarea:-moz-placeholder {
+        color:white;
+        font-size:15px;
+        font-weight: lighter;
+    }
+
+    input::-moz-placeholder, textarea::-moz-placeholder {
+        color:white;
+        font-size:15px;
+        font-weight: lighter;
+    }
+
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color:white;
+        font-size:15px;
+        font-weight: lighter;
+    }
+</style>
+
+<div class="register_wrap">
+
+    <div class="register_title">
+
+        <button class="register_title_back_btn" onclick="back()">
+            <span><i class="fa fa-angle-left fa-2x"></i>返回</span>
+        </button>
+
+        <div class="register_title_h">用户登录</div>
+
+    </div>
+    <div class="register_body">
+        <div class="register_body_banner">
+            <img src="__TPL__/images/20180611/register/register_banner.png" alt="">
+        </div>
+        <div class="register_body_footer">
+            <form id="contestForm" name="formLogin" action="{:url('user/login')}" method="post" class="validforms">
+                <input type="hidden" name="back_act" value="{$back_act}" >
+
+                <div class="tb-user"><p></p><input id="account_number"
+                                                   placeholder="{$lang.username}/{$lang.mobile}/{$lang.email}"
+                                                   name="username" type="text"
+                                                   class="inputBg" id="username" datatype="*"></div>
+
+                <div class="tb-ps"><p></p><input id="login_password"
+                                                 placeholder="{$lang.label_password}" name="password" type="password"
+                                                 class="inputBg"
+                                                 datatype="*6-16"/></div>
+
+                <!-- 判断是否启用验证码{if $enabled_captcha} -->
+
+                <div class="input-text code"><b>{$lang.comment_captcha}</b><span>
+             <input name="captcha" type="text" placeholder="{$lang.comment_captcha}">
+             </span><img src="{:url('Public/captcha', array('rand'=>$this->_var['rand']))}" alt="captcha"
+                         class="img-yzm pull-right" onClick="this.src='{:url('public/captcha')}&t='+Math.random()"/>
+                </div>
+
+                <!--{/if}-->
+                <div class="tb-submit">
+                    <input type="submit" value="登录" id="log_in">
+                </div>
+            </form>
+            <div class="register_body_login">
+                <span><a href="{:url('user/get_password_phone')}" style="color: white">{$lang.forgot_password}</a></span>
+                <span><a href="{:url('user/register')}" style="color: white">{$lang.free_registered}</a></span>
+            </div>
+            <div class="register_body_footer_list">
+                {$lang.third_login}
+                <ul class="register_body_disanfang">
+                    <li><a href="{:url('user/third_login',array('type'=>'wx'))}"><img
+                            src="__TPL__/images/register/weixin_logo.png"></a></li>
+                    <li><a href="{:url('user/third_login',array('type'=>'qq'))}"><img
+                            src="__TPL__/images/register/QQ_logo.png"></a></li>
+                    <li><a href="{:url('user/third_login',array('type'=>'sina'))}"><img
+                            src="__TPL__/images/register/wbo_logo.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function back() {
+
+          // alert('返回');
+          window.history.go(-1);
+        }
+    </script>
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+

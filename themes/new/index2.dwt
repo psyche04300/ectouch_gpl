@@ -1,0 +1,87 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+    <!-- <header class="ect-header ect-margin-tb ect-margin-lr"> <a href="{:url('category/top_all')}" class="pull-left ect-icon ect-icon1 ect-icon-cate1"></a>
+       <div class="ect-header-div">
+         <button class="btn btn-default ect-text-left ect-btn-search" onClick="javascript:openSearch();"><i class="fa fa-search"></i>&nbsp;{$lang.no_keywords}</button>
+       </div>
+     </header>-->
+    <!--banner滚动图片s-->
+
+    <div id="focus" class="focus ect-margin-tb">
+        <div class="hd">
+            <ul>
+            </ul>
+        </div>
+        <div class="bd">
+            {insert name='ads' id=1 num=3}
+        </div>
+    </div>
+    <div style="text-align: center;background: #fff"><img src="__TPL__/images/logo.png"
+                                                                              style="width:68%"/></div>
+    <!--首页快速导航-->
+    <!-- <nav class="container-fluid">
+       <ul class="row ect-row-nav">
+         &lt;!&ndash;{foreach from=$navigator item=nav}&ndash;&gt;
+         <a href="{$nav.url}">
+         <li class="col-sm-3 col-xs-3"><i><img src="{$nav.pic}" ></i>
+           <p class="text-center">{$nav.name}</p>
+         </li>
+         </a>
+         &lt;!&ndash;{/foreach}&ndash;&gt;
+       </ul>
+     </nav>-->
+    <div class="notice-box split-line">
+        <div class="left-icon">
+            <span class="notice_icon"></span>
+        </div>
+        <div class="r-content">
+            <ul class="n-list-box">
+
+                <li class="n-item"><a
+                        href="#">测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1测试公告1</a>
+                </li>
+                <li class="n-item"><a
+                        href="#">测试公告2测试公告2测试公告2测试公告2测试公告2测试公告2测试公告2测试公告2</a>
+                </li>
+                <li class="n-item"><a
+                        href="#">测试公告3测试公告3测试公告3测试公告3测试公告3测试公告3测试公告3测试公告3测试公告3</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
+
+    <div style="padding-bottom:4.2em;"></div>
+    <footer>
+        <nav class="ect-nav"><!-- #BeginLibraryItem "/library/page_menu.lbi" --><!-- #EndLibraryItem --></nav>
+    </footer>
+</div>
+        <!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+function get(id) {
+    if (!id) {
+        id = $(this).attr('id');
+    }
+    $.ajax({
+        type: "GET",
+        url: "{:url('index/ajax_index_goods')}" + "&id=" + id,
+        beforeSend: function () {
+            $("#more").html("<img src='__TPL__/images/loader.gif' />");
+        },
+        success: function (msg) {
+            $('#more').html(msg);
+        }
+    });
+}
+$(function () {
+    get($(".J_LsitName li:eq(0)").attr('id'));
+    $(".J_LsitName li").click(function () {
+        $(this).addClass('select').siblings().removeClass('select');
+        get($(this).attr('id'));
+    });
+});
+</script>
+        </body></html>

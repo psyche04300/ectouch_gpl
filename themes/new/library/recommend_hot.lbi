@@ -1,0 +1,21 @@
+<div class="ect-margin-tb ect-pro-list ect-margin-bottom0"  >
+
+	<div class="J_ItemLeft">
+		<ul><li><a href="/mobile/index.php?m=default&c=exchange&a=index">积分兑换</a></li></ul>
+		<ul class="J_LsitName">
+
+			<!--{foreach from=$categories item=cat name=no}-->
+			<li  <!--{if $smarty.foreach.no.index eq 0}-->class="select"<!--{/if}--> id="{$cat.id}"><a
+				href="javascript:void(0)">{$cat.name|escape:html|truncate:10,false} </a></li>
+			<!--{foreach from=$cat.cat_id item=child }-->
+			<li   id="{$child.id}"><a
+				href="javascript:void(0)">{$child.name|escape:html|truncate:10,false} </a></li>
+			<!--{/foreach}-->
+		<!--{/foreach}-->
+		</ul>
+	</div>
+	<div id="more" class="J_ItemRight" style="text-align: center">
+	<img src="__TPL__/images/loader.gif" />
+	</div>
+ </div>
+<div class="clearfix"></div>

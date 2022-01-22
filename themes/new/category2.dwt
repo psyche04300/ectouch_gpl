@@ -1,0 +1,135 @@
+<!-- #BeginLibraryItem "/library/page_header2.lbi" --><!-- #EndLibraryItem -->
+
+<style>
+    .classify_body_list ul li p a {
+        color: black;
+    }
+</style>
+
+<div class="classify_body">
+    <div class="classify_body_banner">
+        {insert name='ads' id=1 num=1}
+    </div>
+    <div class="classify_body_list">
+        <div class="classify_body_list_left">
+            <ul class="J_LsitName">
+
+                <li   id="group_buy" class="select">
+                    <a href="javascript:void(0)">
+
+                        <img src="__TPL__/images/20180602/1-14.png" alt="">
+                        <p>会员日</p>
+                    </a>
+                </li>
+
+                <!--{foreach from=$categories item=cat}-->
+
+                <li <!--{if $smarty.foreach.no.index eq 0}-->class="tab"<!--{/if}--> id="{$cat.id}">
+                <a href="javascript:void(0)">
+
+                    <img src="{$cat.cat_image}" alt="">
+                    <p>{$cat.name|escape:html|truncate:10,false}</p>
+                </a>
+                </li>
+
+                <!--{foreach from=$cat.cat_id item=child }-->
+                <li  id="{$child.id}">
+                    <a href="javascript:void(0)">
+
+                        <img src="{$child.cat_image}" alt="">
+                        <p>{$child.name|escape:html|truncate:10,false}</p>
+                    </a>
+                </li>
+                <!--{/foreach}-->
+
+                <!--{/foreach}-->
+
+
+            </ul>
+
+            <!--
+            <ul>
+                <li>
+                    <a href="/mobile/index.php?m=default&c=exchange&a=index">
+                        <img src="__TPL__/images/index/pink/index_cfqj.png" alt="">
+                        <p>积分兑换</p>
+                    </a>
+                </li>
+            </ul>
+            -->
+
+        </div>
+
+        <div class="classify_body_list_right">
+            <div id="more" class="J_ItemRight" style="text-align: center">
+                <img src="__TPL__/images/loader.gif" />
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<footer>
+    <nav class="ect-nav index_wrap_footer">
+        <!-- #BeginLibraryItem "/library/page_menu2.lbi" --><!-- #EndLibraryItem -->
+    </nav>
+</footer>
+
+<div style="padding-bottom:4.2em;"></div>
+
+<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+
+<script type="text/javascript">
+  function get(id) {
+    if (!id) {
+      id = $(this).attr('id');
+    }
+    $.ajax({
+      type: "GET",
+      url: "/mobile/index.php?m=default&c=index&a=ajax_index_goods" + "&id=" + id,
+      beforeSend: function () {
+        $("#more").html("<img src='/mobile/themes/default/images/loader.gif' />");
+      },
+      success: function (msg) {
+        $('#more').html(msg);
+      }
+    });
+  }
+  function get2() {
+    $.ajax({
+      type: "GET",
+      url: "/mobile/index.php?m=default&c=index&a=ajax_index_group_buy_goods",
+      beforeSend: function () {
+        $("#more").html("<img src='/mobile/themes/default/images/loader.gif' />");
+      },
+      success: function (msg) {
+        $('#more').html(msg);
+      }
+    });
+  }
+  $(function () {
+
+    get2();
+    $(".J_LsitName li").click(function () {
+      $(this).addClass('tab').siblings().removeClass('tab');
+      if($(this).attr('id')=='group_buy'){
+        get2();
+      }else{
+        get($(this).attr('id'));
+      }
+    });
+  });
+</script>
+<!--<script>
+    $(function(){
+        $(".classify_body_list_left li").click(function(){
+            var i=$(this).index();
+            $(this).addClass("tab").siblings().removeClass("tab");
+            $(".classify_body_list_right ul").eq(i).addClass("show").siblings().removeClass("show")
+        })
+    })
+</script>-->
+</body></html>

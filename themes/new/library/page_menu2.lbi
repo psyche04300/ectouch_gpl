@@ -1,0 +1,39 @@
+<ul class="ect-diaplay-box text-center index_wrap_footer">
+
+  <li class="ect-box-flex">
+      <a href="{:url('index/index')}">
+          <!--<img src="__TPL__/images/index/index_home{if CONTROLLER_NAME eq 'Index' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>-->
+          <img src="__TPL__/images/20180602/1-2{if CONTROLLER_NAME eq 'Index' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>
+          <p {if CONTROLLER_NAME eq 'Index' and ACTION_NAME eq 'index'}style="color: #14b27c"{/if}>{$lang.home}</p>
+      </a>
+  </li>
+
+  <li class="ect-box-flex">
+      <a href="{:url('category2/index')}">
+          <!--<img src="__TPL__/images/index/index_fenlei{if CONTROLLER_NAME eq 'Category2' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>-->
+          <img src="__TPL__/images/20180602/1-5{if CONTROLLER_NAME eq 'Category2' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>
+          <p {if CONTROLLER_NAME eq 'Category2' and ACTION_NAME eq 'index'}style="color: #14b27c"{/if}>{$lang.category}</p>
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="/mobile/index.php?m=default&c=category&a=index&id=0&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&sort=goods_id&order=DESC#goods_list">
+          <!--<img src="__TPL__/images/index/index_tuangou{if CONTROLLER_NAME eq 'Category' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>-->
+          <img src="__TPL__/images/20180602/1-10{if CONTROLLER_NAME eq 'Category' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>
+          <p {if CONTROLLER_NAME eq 'Category' and ACTION_NAME eq 'index'}style="color: #14b27c"{/if}>新品上市</p>
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="{:url('flow/cart')}">
+          <!--<img src="__TPL__/images/index/index_gouwuche{if CONTROLLER_NAME eq 'Flow' and ACTION_NAME eq 'cart'}_sel{/if}.png" alt=""></img>-->
+          <img src="__TPL__/images/20180602/1-7{if CONTROLLER_NAME eq 'Flow' and ACTION_NAME eq 'cart'}_sel{/if}.png" alt=""></img>
+          <p {if CONTROLLER_NAME eq 'Flow' and ACTION_NAME eq 'cart'}style="color: #14b27c"{/if}>{$lang.shopping_cart}</p><p id="position_p">{$cart_num}</p>
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="{:url('user/index')}">
+          <!--<img src="__TPL__/images/index/index_wode{if CONTROLLER_NAME eq 'User' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>-->
+          <img src="__TPL__/images/20180602/1-3{if CONTROLLER_NAME eq 'User' and ACTION_NAME eq 'index'}_sel{/if}.png" alt=""></img>
+          <p {if CONTROLLER_NAME eq 'User' and ACTION_NAME eq 'index'}style="color: #14b27c"{/if}>我的</p>
+      </a>
+  </li>
+</ul>

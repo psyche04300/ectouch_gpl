@@ -1,0 +1,18 @@
+
+
+<!--{if $goods}-->
+<ul id="J_ItemList" class="show">
+    <!-- {foreach from=$goods item=good} -->
+    <li>
+        <a href="{$good.url}" title="{$good.act_name}" style="color:#060606">
+        <img src="{$good.goods_thumb}" alt="">
+
+        <p>{$good.act_name}</p>
+        <p><i></i> <span>{$good.market_price}</span> <span>/</span> <span>箱</span></p>
+        </a>
+    </li>
+
+    <!--{/foreach}-->
+</ul>
+<!-- {/if}-->
+

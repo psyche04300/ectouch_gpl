@@ -1,0 +1,230 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/foxui.min.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/style.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/iconfont.css">
+             <link rel="stylesheet" type="text/css" href="__TPL__/css/groups/style.css">
+          <script src="__TPL__/js/add/jquery-1.11.1.min.js"></script>
+             <style>
+                  .fui-header a.back:before {
+                      top : 15px;
+                  }
+             </style>
+
+
+
+
+        <style type="text/css">
+            #container{margin:0;background: none;}
+            .fui-list-angle span.text-danger{color: #ef4f4f;}
+        </style>
+
+    <body ontouchstart="">
+
+		<div class="fui-page-group statusbar">
+
+<div class="fui-page order-list-page fui-page-current" >
+    <div class="fui-header">
+	<div class="fui-header-left">
+	    <a class="back" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups"></a>
+	</div>
+	<div class="title">我的订单</div>
+	<div class="fui-header-right">&nbsp;</div>
+    </div>
+	<div class="fui-tab fui-tab-danger" id="tab">
+		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=0"  {if $status == 0} class="active" {/if} data-tab="status">全部</a>
+		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=1" {if $status ==1} class="active" {/if} data-tab="status0">待付款</a>
+		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=2" {if $status ==2} class="active" {/if} data-tab="status1">待发货</a>
+		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=3" {if $status ==3} class="active" {/if} data-tab="status2">待收货</a>
+		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=4" {if $status ==4} class="active" {/if} data-tab="status3">已完成</a>
+	</div>
+
+    <div class="fui-content navbar order-list" style="padding-bottom:0;">
+		<div class="fui-content-inner">
+			<div class="content-loading" style="display: none;">
+				<span class="fui-preloader"></span>
+				<span class="text">正在加载订单...</span>
+			</div>
+
+			<div class="content-empty" style="{if $orders}display: none;{else} display: block; {/if}">
+				<i class="icon icon-lights"></i><br>暂时没有任何订单
+			</div>
+
+			<div class="fui-according-group" id="container">
+
+            {foreach from=$orders item=order}
+                <div class='lynn_order_item'>
+                    <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersDetail&orderid={$order.id}&teamid={$order.teamid}">
+                        <div class='lynn_order_title'>
+                            订单号: {$order.orderno}
+                            <span class="status {$order.statuscss}">{$order.statusstr}</span>
+                        </div>
+                        <div class="fui-list lynn_order_list">
+                            <div class="fui-list-media">
+                                <img src="/{$order.thumb}" class="round" alt="{$order.title}" onerror="this.src='__TPL__/images/nopic100.jpg'">
+                            </div>
+                            <div class="fui-list-inner">
+                                <div class="lynn_order_list_title">{$order.title}</div>
+                                <div class="lynn_order_list_subtitle"></div>
+                            </div>
+                            <div class='fui-list-angle'>
+                                <span class='marketprice text-danger'>
+                                    ¥ {if $order.is_team > 0 }{$order.groupsprice}{else}{$order.singleprice}{/if}
+                                </span>/{if $order.units}{$order.goodsnum}{$order.units}{else}1件{/if}<br/>
+                                x1
+                            </div>
+                        </div>
+                        <div class='lynn_order_price'>
+                            <span class='status'>
+                                运费: <span class='text-danger'>¥ {$order.freight}</span>元, 共 <span class='text-danger'>1</span> 个商品
+                                总额: <span class='text-danger'>¥ {$order.amount}</span>元
+                            </span>
+                        </div>
+                    </a>
+                    <div class='lynn_order_bottom'>
+                        {if $order.status==0}
+                        <span class='status'>
+                            <div class="lynn_btn lynn_btn_cancel order-cancel">取消订单
+                                <select data-orderid="{$order.id}">
+                                    <option value="">不取消了</option>
+                                    <option value="我不想买了">我不想买了</option>
+                                    <option value="信息填写错误，重新拍">信息填写错误，重新拍</option>
+                                    <option value="同城见面交易">同城见面交易</option>
+                                    <option value="其他原因">其他原因</option>
+                                </select>
+                            </div>
+                            <a class="lynn_btn lynn_btn_danger" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=pay&orderid={$order.id}&teamid={$order.teamid}">去付款</a>
+                        </span>
+                        {/if}
+                        {if $order.status == 3 || $order.status == -1}
+                        <span class="status">
+                            <div class="lynn_btn lynn_btn_cancel order-delete" data-orderid="{$order.id}">
+                                删除订单
+                            </div>
+                        </span>
+                        {/if}
+                        {if $order.status==2}
+                        <span class='status'>
+                            <a class="lynn_btn lynn_btn_finish order-finish" data-orderid="{$order.id}" href="">确认收货</a>
+                        </span>
+                        {/if}
+                        {if $order.isverify == 1 && $order.status >0 && ($order.success == 1 || $order.is_team == 0) && $order.vnum > 0 }
+                        <span class='status'>
+                            <a class="lynn_btn lynn_btn_cancel order-verify" data-nocache="true" data-orderid="{$order.id}" data-verifytype="{$order.verifytype}" style="margin-left:.5rem;" >
+                                <i class="icon icon-qrcode" style="vertical-align: middle;"></i>
+                                <span>我要使用</span>
+                            </a>
+                        </span>
+                        {/if}
+                    </div>
+                </div>
+		{/foreach}
+
+
+		</div>
+    </div>
+
+
+		<div class="order-verify-hidden" style="display: none;">
+	<div class="verify-pop">
+	    <div class="close"><i class="icon icon-roundclose"></i></div>
+	    <div class="qrcode">
+		<div class="loading"><i class="icon icon-qrcode1"></i> 正在生成二维码</div>
+		<img class="qrimg" src="">
+	    </div>
+	    <div class="tip">
+	    	<p>如果无法扫描?</p>
+	    	<p>请使用拼团核销码</p>
+	    	<p>(请将此二维码出示给店员进行核销)</p>
+	    </div>
+	</div>
+</div>
+	</div>
+
+<div class="fui-navbar" style="z-index: 10;">
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index" class="external nav-item active">
+		<span class="icon icon-home"></span>
+		<span class="label">拼团首页</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category" class="external nav-item ">
+		<span class="icon icon-list"></span>
+		<span class="label">活动列表</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
+		<span class="icon icon-order"></span>
+		<span class="label">我的订单</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
+		<span class="icon icon-group"></span>
+		<span class="label">我的团</span>
+	</a>
+</div>
+
+
+
+
+</div>
+
+
+    <script>
+             $('.order-cancel select').change(function() {
+                var orderid = $(this).data('orderid');
+                var val = $(this).val();
+                if (val == '') {
+                    return
+                }
+
+                var data = {
+                    id : orderid,
+                    remark : val
+                }
+
+                 $.ajax({
+                     type: "post",
+                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersCancel",
+                     data: data,
+                     dataType: "json",
+                     success: function(data){
+
+                        if (data.status == 1) {
+                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+                        } else {
+                            alert(data.msg);
+                        }
+
+
+                    }
+                 });
+
+            });
+
+            $('.order-delete').click(function() {
+                var orderid = $(this).data('orderid');
+
+                 $.ajax({
+                     type: "post",
+                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersDelete",
+                     data: {
+                        id : orderid
+                     },
+                     dataType: "json",
+                     success: function(data){
+
+                        if (data.status == 1) {
+                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+                        } else {
+                            alert(data.msg);
+                        }
+
+
+                    }
+                 });
+            });
+
+
+    </script>
+</body>
+</html>

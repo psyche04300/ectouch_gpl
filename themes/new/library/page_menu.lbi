@@ -1,0 +1,52 @@
+<ul class="ect-diaplay-box text-center">
+  <li class="ect-box-flex">
+      <a href="{:url('index/index')}">
+
+          <!--<i class="ect-icon ect-icon-home"></i>-->
+
+          <img src="__TPL__/images/20180602/1-2.png" alt="" />
+          <p>{$lang.home}</p><!-- 首页 -->
+
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="{:url('category2/index')}">
+
+          <!--<i class="ect-icon ect-icon-cate"></i>-->
+
+          <img src="__TPL__/images/20180602/1-5.png" alt="" />
+          <p>{$lang.category}</p><!-- 分类 -->
+
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="/mobile/index.php?m=default&c=category&a=index&id=0&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&sort=goods_id&order=DESC#goods_list">
+
+          <!--<i class="ect-icon ect-icon-search"></i>-->
+
+          <img src="__TPL__/images/20180602/1-10{if CONTROLLER_NAME eq 'Category' and ACTION_NAME eq 'index'}_sel{/if}.png" alt="" />
+          <p {if CONTROLLER_NAME eq 'Category' and ACTION_NAME eq 'index'}style="color: #14b27c"{/if}>新品上市</p>
+
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="{:url('flow/cart')}">
+
+          <!--<i class="ect-icon ect-icon-flow"></i>-->
+
+          <img src="__TPL__/images/20180602/1-7.png" alt="" />
+          <p>{$lang.shopping_cart}</p>
+
+      </a>
+  </li>
+  <li class="ect-box-flex">
+      <a href="{:url('user/index')}">
+
+          <!--<i class="ect-icon ect-icon-user"></i>-->
+
+          <img src="__TPL__/images/20180602/1-3.png" alt="" />
+          <p>{$lang.user_center}</p>
+
+      </a>
+  </li>
+</ul>

@@ -1,0 +1,227 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/foxui.min.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/style.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/groups/style.css">
+     <link rel="stylesheet" type="text/css" href="__TPL__/css/add/swiper.min.css">
+      <script src="__TPL__/js/add/swiper.min.js"></script>
+      <script src="__TPL__/js/add/jquery-1.11.1.min.js"></script>
+
+      <style type="text/css">
+          .creditshop-detail-page .fui-navbar .abtn{height:2.6rem;width:40%;font-size:12px;-webkit-border-radius: 0;border-radius: 0;padding:0.5rem 0 0 0;display: block;float:left;
+                  line-height: 0.8rem;}
+          .creditshop-detail-page .fui-navbar .homeabtn{height:2.6rem;width:20%;font-size:12px;-webkit-border-radius: 0;border-radius: 0;margin:0;padding:0;display: block;float:left;background: #fff;
+                  color:#666;border:none;line-height: 2.6rem;}
+          .homeabtn .icon{font-size:1rem;}
+          .text-danger span{color:#ef4f4f;font-size:1rem;}
+
+          div.theline { margin-left:10px;overflow-y:scroll; overflow-x:scroll; padding: 0px;margin: 0px; border-top: 0.25rem solid #eee;border-bottom: 0.25rem solid #eee;}
+
+
+            .thumb {
+                   height:360px;
+               }
+
+      </style>
+
+
+    </head>
+
+    <body ontouchstart="">
+
+		<div class="fui-page-group statusbar">
+
+
+<div class="fui-page creditshop-detail-page fui-page-current">
+
+		<a href="javascript:history.go(-1)" class="lynn_back_icon iconfont icon-back" ></a>
+
+
+	<div class="fui-content">
+
+			<div class="swiper-container thumb">
+                    <div class="swiper-wrapper">
+                      {foreach from=$goods.thumb_url item=thumb}
+                        <div class="swiper-slide"><img src="/{$thumb}" style="width:100%;height:100%"></div>
+                     {/foreach}
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+
+
+		<div class="lynn_goods_head">
+			<h2 class="lynn_goods_head_title">
+				<span>{$goods.groupnum}人成团</span>{$goods.title}
+			</h2>
+
+            {if !empty($goods.description)}
+            <p class="lynn_goods_head_subtitle">
+                {$goods.description}
+            </p>
+            {/if}
+
+
+            <div class="lynn_goods_head_info">
+				¥ <strong>{$goods.groupsprice}</strong>/{if $goods.units}{$goods.goodsnum}{$goods.units}{else}1件{/if} <del>¥ {$goods.price}</del>
+				<span class="fr">
+					已有<b>{$goods.fightnum}</b>人参团，销量<b>{$goods.sales}</b>
+				</span>
+				<div style="clear:both;"></div>
+			</div>
+        </div>
+
+
+
+
+                    <div class="lynn_goods_invitation">
+                        <div class="goods-label-list goods-label-style1">
+                            <span class="cl-3 cl-4 cl-2" style="width:24%;"><i></i><strong>全场包邮</strong></span>
+                            <span class="cl-3 cl-4 cl-2" style="width:24%;"><i></i><strong>7天退换</strong></span>
+                            <span class="cl-3 cl-4 cl-2" style="width:27%;"><i></i><strong>48小时发货</strong></span>
+                            <span class="cl-3 cl-4 cl-2" style="width:24%;"><i></i><strong>假一赔十</strong></span>
+                            <div style="clear: both;"></div>
+                        </div>
+                    </div>
+
+		<div class="lynn_opengroups_invitation row">
+			<p>支付开团并邀请<b>{$goods.yaonum}</b>人参加，人数不足自动退款，详见下方拼团玩法</p>
+			<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=fightGroups" class="lynn_fightgroups_btn" data-nocache="true">我要参团</a>
+			<a href="javascript:void(0);" class="lynn_opengroups_btn btn-groups">我要开团</a>
+		</div>
+		<div class="step">
+			<div class="step_hd">
+				<i class="left"></i>拼团玩法<a class="step_more" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=rules">查看详情&gt;</a>
+			</div>
+			<div id="footItem" class="step_list">
+				<div class="step_item ">
+					<div class="step_num">1</div>
+					<div class="step_detail">
+						<p class="step_tit">选择
+							<br>心仪商品</p>
+					</div>
+				</div>
+				<div class="step_item ">
+					<div class="step_num">2</div>
+					<div class="step_detail">
+						<p class="step_tit">支付开团
+							<br>或参团</p>
+					</div>
+				</div>
+				<div class="step_item" id="step_3">
+					<div class="step_num">3</div>
+					<div class="step_detail">
+						<p class="step_tit">邀请好友
+							<br>参团支付</p>
+					</div>
+				</div>
+				<div class="step_item" id="step_4">
+					<div class="step_num">4</div>
+					<div class="step_detail">
+						<p class="step_tit">达到人数
+							<br>团购成功</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+        <div style="border-bottom: 0.25rem solid #eee;"></div>
+
+            <div class="lynn_goods_content">
+			<div class="lynn_goods_content_title"><span>图文详情</span></div>
+			<div class="lynn_goods_content_info content-images" id="content">
+				{if $groupsset.description}
+                    {$groupsset.groups_description}
+                {else}
+                    {$goods.content}
+                {/if}
+            </div>
+		</div>
+            <div class="fui-title" style="background: #ffffff; color: #ff5555; font-weight: bold; font-size: 16px; text-align: center; padding: 5px 5px; margin: 0;">
+                <a href="" style="color: #db39c2" data-nocache="true">为你推荐</a>
+            </div>
+                <div class="lynn_more_groups">
+                    <ul class="lynn_more_groups_list row">
+                      {foreach from=$teams item=team}
+                        <li>
+                            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$team.id}" class="lynn_more_groups_list_a">
+                                <img src="/{$team.thumb}" alt="1" onerror="this.src='__TPL__/images/nopic100.jpg'">
+
+                            </a>
+                            <h3>{$team.title}</h3>
+                            <p class="lynn_more_groups_list_p row">
+                                <span class="fl">¥ <b>{$team.groupsprice}</b><del>¥{$team.price}</del></span>
+                                <span class="fr">{$team.fightnum}人参团</span>
+                            </p>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </div>
+		<div style="height:2.5rem;"></div>
+			</div>
+	<div class="fui-navbar bordert" style="z-index:100;padding:0;">
+        <a class="homeabtn btn btn-warning  external" style="width:35%;" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index">
+			<p class="icon icon-home1"></p>
+		</a>
+        <a class="lynn_goods_btn lynn_btn_waring btn-single" style="width:32%;" href="javascript:void(0);">
+			<p><br></p> 单独购买
+		</a>
+		<a class="lynn_goods_btn lynn_btn_danger" data-nocache="true" style="width:33%;" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=openGroups&id={$goods.id}">
+			<p>¥ <strong>{$goods.groupsprice}</strong></p> {$goods.groupnum}人成团
+		</a>
+	</div>
+</div>
+
+</div>
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, // 循环模式选项
+      pagination: {
+          el: '.swiper-pagination',
+        },
+  })
+
+
+          $("a.btn-groups").click(function() {
+
+                var id = {$goods.id};
+
+
+                var data = {
+                    'type' : 'groups',
+                    'id' : id
+                };
+
+                 $.ajax({
+                     type: "post",
+                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goodsCheck",
+                     data: data,
+                     dataType: "json",
+                     success: function(data){
+                        console.log(data);
+                        if (data.status == 1) {
+                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersConfirm&type=groups&heads=1&id="+id;
+                        } else {
+                            alert(data.msg);
+                        }
+
+
+                    }
+                 });
+
+
+
+
+          });
+
+
+
+  </script>
+</body>
+</html>

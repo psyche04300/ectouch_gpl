@@ -1,0 +1,125 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/foxui.min.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/style.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/groups/style.css">
+         <link rel="stylesheet" type="text/css" href="__TPL__/css/add/swiper.min.css">
+
+          <script src="__TPL__/js/add/swiper.min.js"></script>
+        <style>
+            .adv {
+                height:208px;
+            }
+        </style>
+    </head>
+
+    <body ontouchstart="">
+
+		<div class="fui-page-group statusbar">
+<div class="fui-page creditshop-index-page fui-page-current">
+		<div class="fui-content navbar">
+
+
+
+		<div class="swiper-container adv">
+            <div class="swiper-wrapper">
+              {foreach from=$advs item=adv}
+                <div class="swiper-slide"><img src="/{$adv.thumb}" style="width:100%;height:208px;"></div>
+             {/foreach}
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        <div class="lynn_index_menu row">
+
+              {foreach from=$categories item=category}
+
+            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category&id={$category.id}">
+                {if $category.thumb}
+                <img src="/{$category.thumb}">
+                {else}
+                <img src="__TPL__/images/nopic100.jpg">
+                {/if}
+
+                <p>{$category.name}</p>
+            </a>
+             {/foreach}
+
+
+        </div>
+        <div class="lynn_item"></div>
+
+
+
+
+		<div class="lynn_index_rec">
+			<p><i></i><span>正在热卖</span></p>
+			<span>H O T S A L E</span>
+		</div>
+        <ul class="lynn_index_list_ul row">
+                          {foreach from=$recgoods item=recgood}
+
+            <li class="lynn_index_list_li fui-list goods-list">
+				<div class="lynn_index_list_info fui-list-inner" onclick="window.location.href='http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$recgood.id}';">
+				<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$recgood.id}" class="external lynn_index_list_a fui-list-media">
+					<img src="/{$recgood.thumb}">
+				</a>
+					<h3 style="font-size:18px;line-height:35px;">{$recgood.title}</h3>
+                    {if $recgood.description}<div style="clear: both; "></div><p>{$recgood.description}</p>{/if}
+                    <div style="clear: both; "></div>
+                                        <span style="color: #ff8080;font-size:16px;font-weight: bold;">团长价：{$recgood.mygroupsprice}</span>
+                                        <span style="color: #ccc;font-size:14px;font-weight: bold;">已团{$recgood.sales}件</span>
+                                        <div style="clear: both; "></div>
+                                        <span style="color: #ff8080;font-size:16px;font-weight: bold;">参团价：¥<em>{$recgood.groupsprice}</em></span> <del style="font-size:14px;height:30px;line-height:30px;">原价：¥{$recgood.price}</del>
+
+					<div class="lynn_index_list_team">
+						<span class="lynn_index_list_team_left">
+							<strong><i class="icon icon-group"></i></strong>{$recgood.groupnum}人团 ¥<em>{$recgood.groupsprice}</em>/1件						</span>
+						<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$recgood.id}" class="external lynn_index_list_team_a">去拼团 &gt;</a>
+					</div>
+				</div>
+
+			</li>
+			{/foreach}
+
+        </ul>
+
+	</div>
+</div>
+<div class="fui-navbar" style="z-index: 10;">
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index" class="external nav-item active">
+		<span class="icon icon-home"></span>
+		<span class="label">拼团首页</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category" class="external nav-item ">
+		<span class="icon icon-list"></span>
+		<span class="label">活动列表</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
+		<span class="icon icon-order"></span>
+		<span class="label">我的订单</span>
+	</a>
+	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
+		<span class="icon icon-group"></span>
+		<span class="label">我的团</span>
+	</a>
+</div>
+
+
+</div>
+
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, // 循环模式选项
+  })
+  </script>
+
+
+</body>
+</html>

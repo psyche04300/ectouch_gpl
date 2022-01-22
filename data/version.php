@@ -1,0 +1,5 @@
+<?php
+define('APPNAME', 'ECTouch_gpl');
+define('VERSION', '1.0');
+define('RELEASE', '20141218');
+define('ECTOUCH_GPL_AUTH_KEY', '458593E9FE5AF3C44A237BBA0F2B9067');

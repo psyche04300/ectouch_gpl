@@ -1,0 +1,92 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title></title>
+     <link rel="stylesheet" type="text/css" href="__TPL__/css/add/foxui.min.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/style.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/add/iconfont.css">
+        <link rel="stylesheet" type="text/css" href="__TPL__/css/groups/style.css">
+
+
+
+
+
+
+    <body ontouchstart="">
+    <div class="fui-page-group statusbar">
+<div class="fui-page order-list-page fui-page-current" id="fui-page-1540372978091">
+	<div class="fui-header">
+		<div class="fui-header-left">
+			<a class="back" href="./index.php?i=9&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=order"></a>
+		</div>
+		<div class="title">拼团玩法</div>
+		<div class="fui-header-right">&nbsp;</div>
+	</div>
+	<div class="fui-content" style="padding-bottom:0;top:2.2rem;">
+				<dl class="lynn_team_rules">
+			<dt>拼团流程：</dt>
+			<dd class="lynn_team_rules_dd">
+				1 选择心仪商品 2 支付开团或参团 3 邀请好友参团 4 达到人数团购成功
+			</dd>
+			<dd class="lynn_team_rules_content">
+				<p>123123123</p>			</dd>
+		</dl>
+			</div>
+</div>
+<script language="javascript">
+	$(function(){
+		$.getJSON("./index.php?i=9&c=entry&m=ewei_shopv2&do=mobile&r=util.task");
+	})
+</script>
+
+<script language="javascript">
+	require(['init']);
+
+	setTimeout(function () {
+		if($(".danmu").length>0){
+			$(".danmu").remove();
+		}
+	}, 500);
+</script>
+
+
+
+
+<script language="javascript">
+        clearTimeout(window.interval);
+        window.interval = setTimeout(function () {
+            window.shareData = {"title":"\u6d4b\u8bd5\u5e97\u94fa","imgUrl":"http:\/\/apps.qzl0594.com\/attachment\/images\/9\/2017\/11\/Z1J34034aEGdp110p995z7AU315u11.jpg","desc":"","link":"http:\/\/apps.qzl0594.com\/app\/index.php?i=9&c=entry&m=ewei_shopv2&do=mobile"};
+            jssdkconfig = {"appId":"wxf56909c5ee47d6b6","nonceStr":"hQ915g971C798B77","timestamp":"1540373174","signature":"7726261585ac8723239699d6d8350ce895ca80e3"} || { jsApiList:[] };
+            jssdkconfig.debug = false;
+            jssdkconfig.jsApiList = ['checkJsApi','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','showOptionMenu', 'hideMenuItems', 'onMenuShareQZone', 'scanQRCode','openLocation'];
+            wx.config(jssdkconfig);
+            wx.ready(function () {
+                wx.showOptionMenu();
+
+
+                    window.shareData.success = "";
+                    if(window.shareData.success){
+                        var success = window.shareData.success;
+                        window.shareData.success = function(){
+                            eval(success)
+                        };
+                    }
+
+
+                wx.onMenuShareAppMessage(window.shareData);
+                wx.onMenuShareTimeline(window.shareData);
+                wx.onMenuShareQQ(window.shareData);
+                wx.onMenuShareWeibo(window.shareData);
+                wx.onMenuShareQZone(window.shareData);
+            });
+        },500);
+
+
+
+		</script>
+
+
+</div>
+
+		</body></html>
