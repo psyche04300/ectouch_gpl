@@ -24,7 +24,7 @@
             </div>
             <div class="title" style="margin-right:-2rem;">收银台</div>
             <div class="fui-header-right">
-                <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders">我的订单</a>
+                <a href="/mobile/index.php?m=default&c=groups&a=orders">我的订单</a>
             </div>
         </div>
 	<div class="fui-content margin">

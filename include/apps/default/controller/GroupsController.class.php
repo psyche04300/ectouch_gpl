@@ -588,7 +588,7 @@ class GroupsController extends CommonController
             $order = M()->getRow("select * from "  . $this->model->pre . "groups_order where id=$orderid");
 
             $p1 =  empty($teamid) ? $order['teamid'] : $teamid;
-            $payurl = "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=pay&teamid=$p1&orderid=$orderid";
+            $payurl = "/mobile/index.php?m=default&c=groups&a=pay&teamid=$p1&orderid=$orderid";
             header('location: ' . $payurl);
         }
 
@@ -901,7 +901,7 @@ class GroupsController extends CommonController
         $resp = array();
 
 
-        $url =  "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+        $url =  "/mobile/index.php?m=default&c=groups&a=orders";
 
         if (empty($_SESSION ['direct_shopping']) && $_SESSION['user_id'] == 0) {
             /* 用户没有登录且没有选定匿名购物，转向到登录页面 */
@@ -945,7 +945,7 @@ class GroupsController extends CommonController
         $resp = array();
 
 
-        $url =  "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+        $url =  "/mobile/index.php?m=default&c=groups&a=orders";
 
         if (empty($_SESSION ['direct_shopping']) && $_SESSION['user_id'] == 0) {
             /* 用户没有登录且没有选定匿名购物，转向到登录页面 */

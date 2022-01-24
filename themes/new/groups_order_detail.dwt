@@ -29,7 +29,7 @@
 			<a class="back" href="javascript:history.go(-1)"></a>
 		</div>
 		<div class="title">订单详情</div>
-		<div class="fui-header-right" onclick="location.href='http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders'">
+		<div class="fui-header-right" onclick="location.href='/mobile/index.php?m=default&c=groups&a=orders'">
 			<span class="icon icon-order" style="font-size:1.1rem;"></span>
 		</div>
 	</div>

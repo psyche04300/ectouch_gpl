@@ -40,7 +40,7 @@
 
                         <!--地址选择-->
             <div class="fui-list-group" id="addressInfo" data-addressid="236">
-                <a class="fui-list" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=consignee_list" data-nocache="true">
+                <a class="fui-list" href="/mobile/index.php?m=default&c=groups&a=consignee_list" data-nocache="true">
                     <div class="fui-list-media">
                         <i class="icon icon-location"></i>
                     </div>
@@ -85,12 +85,12 @@
         <div class="fui-list-group" style="margin-top: 10px">
             <div class="fui-list goods-item">
                 <div class="fui-list-media">
-                    <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$goods.id}" class="external">
+                    <a href="/mobile/index.php?m=default&c=groups&a=goods&id={$goods.id}" class="external">
                         <img src="/{$goods.thumb}" alt="1" class="round" onerror="this.src='__TPL__/images/nopic100.jp'" >
                     </a>
                 </div>
                 <div class="fui-list-inner">
-                    <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$goods.id}">
+                    <a href="/mobile/index.php?m=default&c=groups&a=goods&id={$goods.id}">
                         <div class="text">
                             {$goods.title}
                          </div>

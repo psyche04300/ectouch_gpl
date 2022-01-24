@@ -91,12 +91,12 @@
 
 		<div class="lynn_opengroups_invitation row">
 			<p>支付开团并邀请<b>{$goods.yaonum}</b>人参加，人数不足自动退款，详见下方拼团玩法</p>
-			<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=fightGroups" class="lynn_fightgroups_btn" data-nocache="true">我要参团</a>
+			<a href="/mobile/index.php?m=default&c=groups&a=fightGroups" class="lynn_fightgroups_btn" data-nocache="true">我要参团</a>
 			<a href="javascript:void(0);" class="lynn_opengroups_btn btn-groups">我要开团</a>
 		</div>
 		<div class="step">
 			<div class="step_hd">
-				<i class="left"></i>拼团玩法<a class="step_more" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=rules">查看详情&gt;</a>
+				<i class="left"></i>拼团玩法<a class="step_more" href="/mobile/index.php?m=default&c=groups&a=rules">查看详情&gt;</a>
 			</div>
 			<div id="footItem" class="step_list">
 				<div class="step_item ">
@@ -150,7 +150,7 @@
                     <ul class="lynn_more_groups_list row">
                       {foreach from=$teams item=team}
                         <li>
-                            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$team.id}" class="lynn_more_groups_list_a">
+                            <a href="/mobile/index.php?m=default&c=groups&a=goods&id={$team.id}" class="lynn_more_groups_list_a">
                                 <img src="/{$team.thumb}" alt="1" onerror="this.src='__TPL__/images/nopic100.jpg'">
 
                             </a>
@@ -166,13 +166,13 @@
 		<div style="height:2.5rem;"></div>
 			</div>
 	<div class="fui-navbar bordert" style="z-index:100;padding:0;">
-        <a class="homeabtn btn btn-warning  external" style="width:35%;" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index">
+        <a class="homeabtn btn btn-warning  external" style="width:35%;" href="/mobile/index.php?m=default&c=groups&a=index">
 			<p class="icon icon-home1"></p>
 		</a>
         <a class="lynn_goods_btn lynn_btn_waring btn-single" style="width:32%;" href="javascript:void(0);">
 			<p><br></p> 单独购买
 		</a>
-		<a class="lynn_goods_btn lynn_btn_danger" data-nocache="true" style="width:33%;" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=openGroups&id={$goods.id}">
+		<a class="lynn_goods_btn lynn_btn_danger" data-nocache="true" style="width:33%;" href="/mobile/index.php?m=default&c=groups&a=openGroups&id={$goods.id}">
 			<p>¥ <strong>{$goods.groupsprice}</strong></p> {$goods.groupnum}人成团
 		</a>
 	</div>
@@ -200,13 +200,13 @@
 
                  $.ajax({
                      type: "post",
-                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goodsCheck",
+                     url: "/mobile/index.php?m=default&c=groups&a=goodsCheck",
                      data: data,
                      dataType: "json",
                      success: function(data){
                         console.log(data);
                         if (data.status == 1) {
-                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersConfirm&type=groups&heads=1&id="+id;
+                            location.href= "/mobile/index.php?m=default&c=groups&a=ordersConfirm&type=groups&heads=1&id="+id;
                         } else {
                             alert(data.msg);
                         }

@@ -30,10 +30,10 @@
 						<a href="javascript:void(0);" class="icon icon-menu category_menu"></a>
 					</div>
 		<div class="category_menu_list" style="display: none;">
-            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category" class="external">全部活动</a>
+            <a href="/mobile/index.php?m=default&c=groups&a=category" class="external">全部活动</a>
             {foreach from=$categories item=category}
 
-            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category&id={$category.id}" class="external">{$category.name}</a>
+            <a href="/mobile/index.php?m=default&c=groups&a=category&id={$category.id}" class="external">{$category.name}</a>
             {/foreach}
         </div>
 		<div class="lynn-mask fui-mask-m"></div>
@@ -63,7 +63,7 @@
                                     <a href="./index.php?i=9&amp;c=entry&amp;m=ewei_shopv2&amp;do=mobile&amp;r=groups.goods&amp;id=35" class="lynn_index_list_a fui-list-media">
                                         <img src="/{$good.thumb}" alt="1" onerror="this.src='__TPL__/images/nopic100.jpg'" style="width:100px;height:100px">
                                     </a>
-                                    <div class="lynn_index_list_info fui-list-inner" onclick="window.location.href='http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$good.id}';">
+                                    <div class="lynn_index_list_info fui-list-inner" onclick="window.location.href='/mobile/index.php?m=default&c=groups&a=goods&id={$good.id}';">
                                         <h3>{$good.title}</h3>
                                         <p>{$good.description}</p>
                                         <del>原价：¥{$good.price}</del>
@@ -72,7 +72,7 @@
                                                     <strong><i class="icon icon-group"></i></strong>
                                                     {$good.groupnum}人团 ¥<em>{$good.groupsprice}</em>/{$good.goodsnum}{$good.units}
                                                 </span>
-                                            <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=goods&id={$good.id}" class="lynn_index_list_team_a">去拼团 &gt;</a>
+                                            <a href="/mobile/index.php?m=default&c=groups&a=goods&id={$good.id}" class="lynn_index_list_team_a">去拼团 &gt;</a>
                                         </div>
                                     </div>
                                 </li>
@@ -90,7 +90,7 @@
             						<i class="icon icon-information"></i>
             					</div>
             					<div class="content">未找到任何活动</div>
-            					<a class="btn btn-default btn-default block" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index">去首页逛逛</a>
+            					<a class="btn btn-default btn-default block" href="/mobile/index.php?m=default&c=groups&a=index">去首页逛逛</a>
             					<a class="btn btn-default btn-default block back">返回上一页</a>
             				</div>
             			</div>
@@ -102,19 +102,19 @@
 
 </div>
 <div class="fui-navbar" style="z-index: 10;">
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=index" class="external nav-item ">
 		<span class="icon icon-home"></span>
 		<span class="label">拼团首页</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category" class="external nav-item active">
+	<a href="/mobile/index.php?m=default&c=groups&a=category" class="external nav-item active">
 		<span class="icon icon-list"></span>
 		<span class="label">活动列表</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
 		<span class="icon icon-order"></span>
 		<span class="label">我的订单</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
 		<span class="icon icon-group"></span>
 		<span class="label">我的团</span>
 	</a>
@@ -149,7 +149,7 @@
     			})
     			$("#search").click(function(){
     				var kw = $.trim($("#keyword").val());
-    				location.href = "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category&keyword="+kw+"&id={$category.id}";
+    				location.href = "/mobile/index.php?m=default&c=groups&a=category&keyword="+kw+"&id={$category.id}";
                 })
 
                 $('#keyword').focus(function() {

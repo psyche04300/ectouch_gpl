@@ -29,17 +29,17 @@
 <div class="fui-page order-list-page fui-page-current" >
     <div class="fui-header">
 	<div class="fui-header-left">
-	    <a class="back" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups"></a>
+	    <a class="back" href="/mobile/index.php?m=default&c=groups"></a>
 	</div>
 	<div class="title">我的订单</div>
 	<div class="fui-header-right">&nbsp;</div>
     </div>
 	<div class="fui-tab fui-tab-danger" id="tab">
-		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=0"  {if $status == 0} class="active" {/if} data-tab="status">全部</a>
-		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=1" {if $status ==1} class="active" {/if} data-tab="status0">待付款</a>
-		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=2" {if $status ==2} class="active" {/if} data-tab="status1">待发货</a>
-		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=3" {if $status ==3} class="active" {/if} data-tab="status2">待收货</a>
-		<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders&status=4" {if $status ==4} class="active" {/if} data-tab="status3">已完成</a>
+		<a href="/mobile/index.php?m=default&c=groups&a=orders&status=0"  {if $status == 0} class="active" {/if} data-tab="status">全部</a>
+		<a href="/mobile/index.php?m=default&c=groups&a=orders&status=1" {if $status ==1} class="active" {/if} data-tab="status0">待付款</a>
+		<a href="/mobile/index.php?m=default&c=groups&a=orders&status=2" {if $status ==2} class="active" {/if} data-tab="status1">待发货</a>
+		<a href="/mobile/index.php?m=default&c=groups&a=orders&status=3" {if $status ==3} class="active" {/if} data-tab="status2">待收货</a>
+		<a href="/mobile/index.php?m=default&c=groups&a=orders&status=4" {if $status ==4} class="active" {/if} data-tab="status3">已完成</a>
 	</div>
 
     <div class="fui-content navbar order-list" style="padding-bottom:0;">
@@ -57,7 +57,7 @@
 
             {foreach from=$orders item=order}
                 <div class='lynn_order_item'>
-                    <a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersDetail&orderid={$order.id}&teamid={$order.teamid}">
+                    <a href="/mobile/index.php?m=default&c=groups&a=ordersDetail&orderid={$order.id}&teamid={$order.teamid}">
                         <div class='lynn_order_title'>
                             订单号: {$order.orderno}
                             <span class="status {$order.statuscss}">{$order.statusstr}</span>
@@ -96,7 +96,7 @@
                                     <option value="其他原因">其他原因</option>
                                 </select>
                             </div>
-                            <a class="lynn_btn lynn_btn_danger" href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=pay&orderid={$order.id}&teamid={$order.teamid}">去付款</a>
+                            <a class="lynn_btn lynn_btn_danger" href="/mobile/index.php?m=default&c=groups&a=pay&orderid={$order.id}&teamid={$order.teamid}">去付款</a>
                         </span>
                         {/if}
                         {if $order.status == 3 || $order.status == -1}
@@ -145,19 +145,19 @@
 	</div>
 
 <div class="fui-navbar" style="z-index: 10;">
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=index" class="external nav-item active">
+	<a href="/mobile/index.php?m=default&c=groups&a=index" class="external nav-item active">
 		<span class="icon icon-home"></span>
 		<span class="label">拼团首页</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=category" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=category" class="external nav-item ">
 		<span class="icon icon-list"></span>
 		<span class="label">活动列表</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=orders" class="external nav-item ">
 		<span class="icon icon-order"></span>
 		<span class="label">我的订单</span>
 	</a>
-	<a href="http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
+	<a href="/mobile/index.php?m=default&c=groups&a=team" class="external nav-item ">
 		<span class="icon icon-group"></span>
 		<span class="label">我的团</span>
 	</a>
@@ -184,13 +184,13 @@
 
                  $.ajax({
                      type: "post",
-                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersCancel",
+                     url: "/mobile/index.php?m=default&c=groups&a=ordersCancel",
                      data: data,
                      dataType: "json",
                      success: function(data){
 
                         if (data.status == 1) {
-                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+                            location.href= "/mobile/index.php?m=default&c=groups&a=orders";
                         } else {
                             alert(data.msg);
                         }
@@ -206,7 +206,7 @@
 
                  $.ajax({
                      type: "post",
-                     url: "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=ordersDelete",
+                     url: "/mobile/index.php?m=default&c=groups&a=ordersDelete",
                      data: {
                         id : orderid
                      },
@@ -214,7 +214,7 @@
                      success: function(data){
 
                         if (data.status == 1) {
-                            location.href= "http://shop.jigongbao.com/mobile/index.php?m=default&c=groups&a=orders";
+                            location.href= "/mobile/index.php?m=default&c=groups&a=orders";
                         } else {
                             alert(data.msg);
                         }

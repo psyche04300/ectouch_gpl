@@ -4,7 +4,7 @@
 	[UCenter] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: pm.php 1059 2011-03-01 07:25:09Z monkey $
+	$Id: pm.php 1059 2011-03-01 07:25:09Z monkey newauthor $
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -759,7 +759,7 @@ class pmmodel {
 
 		if($filter == 'newpm') {
 			$addsql = 'm.isnew=1 AND ';
-		/*ÐÔÄÜÓÐÓ°Ïì
+		/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½
 		} elseif($filter == 'privatepm') {
 			$addsql = 't.pmtype=1 AND ';
 		} elseif($filter == 'chatpm') {
